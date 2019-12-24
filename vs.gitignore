@@ -1,0 +1,353 @@
+＃＃忽略Visual Studio临时文件，生成结果和
+＃＃由流行的Visual Studio加载项生成的文件。
+＃＃
+＃＃从https://github.com/github/gitignore/blob/master/VisualStudio.gitignore获取最新信息
+
+＃用户特定的文件
+* .rsuser
+* .suo
+*。用户
+* .userosscache
+* .sln.docstates
+
+＃用户特定的文件（MonoDevelop / Xamarin Studio）
+* .userprefs
+
+＃单自动生成的文件
+mono_crash。*
+
+＃建立结果
+[ Dd ] ebug /
+[ Dd ] ebug公开 /
+[ Rr ] 消除 /
+[ Rr ] 消除 /
+x64 /
+x86 /
+[ Aa ] [ Rr ] [ Mm ] /
+[ Aa ] [ Rr ] [ Mm ] 64 /
+bld /
+[ 了Bb ] 在 /
+[ Oo ] bj /
+[ Ll ] og /
+[ Ll ] ogs /
+
+＃的Visual Studio二千零十七分之二千零十五缓存/选项目录
+.vs /
+＃如果您有在wwwroot中创建项目的静态文件的任务，请取消注释
+＃ wwwroot文件/
+
+＃的Visual Studio 2017年自动生成的文件
+生成\ 文件 /
+
+＃ MSTest的测试结果
+[ Tt的 ] EST [ 器Rr ] esult * /
+[ Bb ] uild [ Ll ] og。*
+
+＃ NUnit的
+* .VisualState.xml
+TestResult.xml
+nunit- * .xml
+
+＃建立ATL项目的结果
+[ Dd ] ebugPS /
+[ Rr ] eleasePS /
+dlldata.c
+
+＃基准结果
+BenchmarkDotNet.Artifacts /
+
+＃ .NET核心
+project.lock.json
+project.fragment.lock.json
+文物 /
+
+＃了StyleCop
+StyleCopReport.xml
+
+＃由Visual Studio构建的文件
+* _i.c
+* _p.c
+* _h.h
+* .ilk
+* .meta
+* .obj
+* .iobj
+* .pch
+* .pdb
+* .ipdb
+* .pgc
+* .pgd
+* .rsp
+* .sbr
+* .tlb
+* .tli
+* .tlh
+* .tmp
+* .tmp_proj
+* _wpftmp.csproj
+* .log
+* .vspscc
+* .vssscc
+.builds
+* .pidb
+* .svclog
+* .scc
+
+＃放肆测试文件
+_楚兹帕*
+
+＃的Visual C ++缓存文件
+ipch /
+* .aps
+* .ncb
+* .opendb
+* .opensdf
+* .sdf
+* .cachefile
+* .VC.db
+* .VC.VC.opendb
+
+＃的Visual Studio分析器
+* .psess
+* .vsp
+* .vspx
+* .sap
+
+＃ Visual Studio的跟踪文件
+* .e2e
+
+＃ TFS 2012的本地工作区
+$ tf /
+
+＃指导自动化工具包
+* .gpState
+
+＃ ReSharper的是一个.NET编码加载
+_ReSharper * /
+* 。[ Rr ] e [ Ss ] 竖琴师
+* .DotSettings.user
+
+＃ TeamCity的是一个构建加载
+_TeamCity *
+
+＃ DotCover是一个代码覆盖工具
+* .dotCover
+
+＃ AxoCover是一个代码覆盖工具
+.axoCover / *
+！.axoCover / settings.json
+
+＃被单是一个免费的，跨平台的代码覆盖工具
+覆盖率* [ .json，.xml，.info ]
+
+＃ Visual Studio代码覆盖率结果
+* .coverage
+* .coveragexml
+
+＃ NCrunch
+_NCrunch_ *
+。* 紧缩* .local.xml
+nCrunchTemp_ *
+
+＃ MightyMoose
+* .mm。*
+AutoTest.Net /
+
+＃网络工作台（SASS）
+.sass-cache /
+
+＃ Installshield的输出文件夹
+[ Ee ] xpress /
+
+＃ DocProject是一个文档生成器加载项
+DocProject / buildhelp /
+DocProject / 帮助 / * .HxT
+DocProject / 帮助 / * .HxC
+DocProject / 帮助 / * .hhc
+DocProject / 帮助 / * .hhk
+DocProject / 帮助 / * .hhp
+DocProject / 帮助 / HTML2
+DocProject / 帮助 / html
+
+＃ Click-Once目录
+发布 /
+
+＃发布Web输出
+* 。[ Pp ] ublish.xml
+* .azurePubxml
+＃注意：如果要签入Web部署设置，请注释下一行，
+＃但数据库连接字符串（带有潜在密码）将不加密
+* .pubxml
+* .publishproj
+
+＃微软Azure Web App的发布设置。如果要注释下一行
+＃检查您的Azure Web App发布设置，但包含敏感信息
+这些脚本中的＃将不会被加密
+发布脚本 /
+
+＃的NuGet包
+* .nu​​pkg
+＃的NuGet符号包
+* .snupkg
+＃由于Package Restore，可以忽略packages文件夹
+** / [ Pp ] 装箱 / *
+＃除了build /外，它用作MSBuild目标。
+！** / [ Pp ] ackages / build /
+＃取消注释（如果有必要），但通常会在需要时重新生成
+＃！** / [Pp] ackages / repositories.config
+＃的NuGet V3的project.json文件产生更多的忽略文件
+* .nu​​get.props
+* .nu​​get.targets
+
+＃微软Azure构建输出
+csx /
+* .build.csdef
+
+＃微软Azure模拟器
+ecf /
+rcf /
+
+＃ Windows应用商店中的应用程序包的目录和文件
+AppPackages /
+捆绑文物 /
+Package.StoreAssociation.xml
+_pkginfo.txt
+* .appx
+* .appxbundle
+* .appxupload
+
+＃ Visual Studio中的缓存文件
+＃以.cache结尾的文件可以忽略
+* 。[ 抄送 ] 疼痛
+＃但要跟踪以.cache结尾的目录
+！？* 。[ 抄送 ] 疼痛 /
+
+＃其他
+ClientBin /
+〜$ *
+* 〜
+* .dbmdl
+* .dbproj.schemaview
+* .jfm
+* .pfx
+* .publishsettings
+orleans.codegen.cs
+
+＃包含强名文件可能会带来安全风险
+＃（https://github.com/github/gitignore/pull/2483#issue-259490424）
+＃ * .snk
+
+＃由于存在多个工作流程，请取消注释下一行以忽略bower_components
+＃（https://github.com/github/gitignore/pull/1529#issuecomment-104372622）
+＃ bower_components /
+
+＃ RIA / Silverlight的项目
+Generated_Code /
+
+＃通过转换旧项目文件备份和报告文件
+＃到较新的Visual Studio版本。不需要备份文件，
+＃因为我们有git ;-)
+_UpgradeReport_Files /
+备份* /
+UpgradeLog * .XML
+UpgradeLog * .htm
+ServiceFabricBackup /
+* .rptproj.bak
+
+＃ SQL Server文件
+* .mdf
+* .ldf
+* .ndf
+
+＃商业智能项目
+* .rdl.data
+* .bim.layout
+* .bim_ * .settings
+* .rptproj.rsuser
+* - [ Bb ] ackup.rdl
+* - [ 了Bb ] ackup  （ [ 0-9 ] ）的.rdl
+* - [ 了Bb ] ackup  （ [ 0-9 ] [ 0-9 ] ）的.rdl
+
+＃微软假货
+假装组件 /
+
+＃ GhostDoc插件设置文件
+* .GhostDoc.xml
+
+＃适用于Visual Studio的Node.js工具
+.ntvs_analysis.dat
+node_modules /
+
+＃的Visual Studio 6生成日志
+* .plg
+
+＃的Visual Studio 6工作区选项文件
+* .opt
+
+＃的Visual Studio 6自动生成的工作空间的文件（包含文件被打开等等）
+* .vbw
+
+＃的Visual Studio LightSwitch中构建输出
+** / * .HTMLClient / GeneratedArtifacts
+** / * .DesktopClient / GeneratedArtifacts
+** / * .DesktopClient / ModelManifest.xml
+** / * .Server / GeneratedArtifacts
+** / * .Server / ModelManifest.xml
+_Pvt_Extensions
+
+＃ PAKET依赖管理
+.paket / paket.exe
+档案文件 /
+
+＃假-F＃制作
+。假 /
+
+＃的CodeRush个人设置
+.cr / 个人
+
+＃适用于Visual Studio（PTVS）的Python工具
+__pycache__ /
+* .pyc
+
+＃蛋糕-如果正在使用，请取消注释
+＃工具/ **
+＃！tools / packages.config
+
+＃标签工作室
+* .tss
+
+＃ Telerik的JustMock配置文件
+* .jmconfig
+
+＃的BizTalk构建输出
+* .btp.cs
+* .btm.cs
+* .odx.cs
+* .xsd.cs
+
+＃ OpenCover UI分析结果
+OpenCover /
+
+＃天青流分析本地运行输出
+ASALocalRun /
+
+＃ MSBuild的二进制和结构化日志
+* .binlog
+
+＃的NVidia Nsight GPU调试器配置文件
+* .nvuser
+
+＃ MFractors（Xamarin的生产力工具）的工作文件夹
+.mfractor /
+
+＃本地历史的Visual Studio
+.localhistory /
+
+＃ BeatPulse健康检查临时数据库
+healthchecksdb
+
+＃在Visual Studio 2017年装基准转换工具备份文件夹
+迁移备份 /
+
+＃ Ionide（跨平台的F＃VS代码工具）的工作文件夹
+.ionide /
