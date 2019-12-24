@@ -43,8 +43,9 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(1, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(355, 109);
+            this.pictureBox1.Size = new System.Drawing.Size(473, 136);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -52,40 +53,45 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 118);
+            this.label1.Location = new System.Drawing.Point(127, 148);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "账号：";
             // 
             // txtLoginName
             // 
-            this.txtLoginName.Location = new System.Drawing.Point(156, 115);
+            this.txtLoginName.Location = new System.Drawing.Point(208, 144);
+            this.txtLoginName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLoginName.Name = "txtLoginName";
-            this.txtLoginName.Size = new System.Drawing.Size(100, 21);
+            this.txtLoginName.Size = new System.Drawing.Size(132, 25);
             this.txtLoginName.TabIndex = 2;
             // 
             // txtLoginPwd
             // 
-            this.txtLoginPwd.Location = new System.Drawing.Point(156, 158);
+            this.txtLoginPwd.Location = new System.Drawing.Point(208, 198);
+            this.txtLoginPwd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtLoginPwd.Name = "txtLoginPwd";
-            this.txtLoginPwd.Size = new System.Drawing.Size(100, 21);
+            this.txtLoginPwd.Size = new System.Drawing.Size(132, 25);
             this.txtLoginPwd.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(95, 161);
+            this.label2.Location = new System.Drawing.Point(127, 201);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.Size = new System.Drawing.Size(52, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "密码：";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(79, 203);
+            this.btnLogin.Location = new System.Drawing.Point(105, 254);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(75, 23);
+            this.btnLogin.Size = new System.Drawing.Size(100, 29);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "登陆";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -93,9 +99,10 @@
             // 
             // btnQuit
             // 
-            this.btnQuit.Location = new System.Drawing.Point(200, 203);
+            this.btnQuit.Location = new System.Drawing.Point(267, 254);
+            this.btnQuit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnQuit.Name = "btnQuit";
-            this.btnQuit.Size = new System.Drawing.Size(75, 23);
+            this.btnQuit.Size = new System.Drawing.Size(100, 29);
             this.btnQuit.TabIndex = 6;
             this.btnQuit.Text = "退出";
             this.btnQuit.UseVisualStyleBackColor = true;
@@ -103,10 +110,10 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(358, 254);
+            this.ClientSize = new System.Drawing.Size(477, 318);
             this.Controls.Add(this.btnQuit);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtLoginPwd);
@@ -115,6 +122,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "LoginForm";
             this.Text = "登陆";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

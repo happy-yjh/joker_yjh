@@ -36,7 +36,7 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.imageListDisk = new System.Windows.Forms.ImageList(this.components);
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvDisks = new System.Windows.Forms.ListView();
             this.panelDisk = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.panelDisk.SuspendLayout();
@@ -104,21 +104,24 @@
             this.imageListDisk.Images.SetKeyName(0, "1.jpg");
             this.imageListDisk.Images.SetKeyName(1, "2.jpg");
             // 
-            // listView1
+            // lvDisks
             // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.HideSelection = false;
-            this.listView1.LargeImageList = this.imageListDisk;
-            this.listView1.Location = new System.Drawing.Point(0, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(981, 567);
-            this.listView1.TabIndex = 10;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.lvDisks.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lvDisks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvDisks.HideSelection = false;
+            this.lvDisks.LargeImageList = this.imageListDisk;
+            this.lvDisks.Location = new System.Drawing.Point(0, 0);
+            this.lvDisks.Name = "lvDisks";
+            this.lvDisks.Size = new System.Drawing.Size(981, 567);
+            this.lvDisks.TabIndex = 10;
+            this.lvDisks.UseCompatibleStateImageBehavior = false;
+            this.lvDisks.ItemMouseHover += new System.Windows.Forms.ListViewItemMouseHoverEventHandler(this.lvDisks_ItemMouseHover);
+            this.lvDisks.DoubleClick += new System.EventHandler(this.lvDisks_DoubleClick);
             // 
             // panelDisk
             // 
             this.panelDisk.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelDisk.Controls.Add(this.listView1);
+            this.panelDisk.Controls.Add(this.lvDisks);
             this.panelDisk.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelDisk.Location = new System.Drawing.Point(0, 85);
             this.panelDisk.Margin = new System.Windows.Forms.Padding(4);
@@ -153,7 +156,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ImageList imageListDisk;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvDisks;
         private System.Windows.Forms.Panel panelDisk;
     }
 }
