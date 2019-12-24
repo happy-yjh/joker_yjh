@@ -15,35 +15,18 @@ namespace BillibradRoom
         public MainForm()
         {
             InitializeComponent();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            /*
+             * imageListDisk
+             */
+            this.imageListDisk.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListDisk.ImageStream")));
+            this.imageListDisk.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListDisk.Images.SetKeyName(0, "1.jpg");
+            this.imageListDisk.Images.SetKeyName(1, "2.jpg");
+
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            DiskForm diskForm = new DiskForm();
-            diskForm.ShowDialog();
-            this.pictureBox1.Image = Image.FromFile(@"D:\github\期末项目\BillibradRoom\BillibradRoom\Resources\台球桌.jpg");
-        }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            DiskForm diskForm = new DiskForm();
-            diskForm.ShowDialog();
-            this.pictureBox2.Image= Image.FromFile(@"D:\github\期末项目\BillibradRoom\BillibradRoom\Resources\台球桌.jpg");
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-            DiskForm diskForm = new DiskForm();
-            diskForm.ShowDialog();
-            this.pictureBox3.Image= Image.FromFile(@"D:\github\期末项目\BillibradRoom\BillibradRoom\Resources\台球桌.jpg");
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            DiskForm diskForm = new DiskForm();
-            diskForm.ShowDialog();
-            this.pictureBox4.Image= Image.FromFile(@"D:\github\期末项目\BillibradRoom\BillibradRoom\Resources\台球桌.jpg");
-        }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
@@ -66,6 +49,11 @@ namespace BillibradRoom
         {
             DiskForm diskForm = new DiskForm();
             diskForm.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
