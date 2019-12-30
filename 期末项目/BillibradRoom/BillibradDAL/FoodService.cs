@@ -44,6 +44,23 @@ namespace BillibradDAL
                 return foodList;
             }
         }
+        //查询并生成房间
+        private Foods GetFoodsBySql(string sql, SqlParameter[] parameters)
+        {
+            using (SqlDataReader reader = SqlHelper.GetDataReader(sql, parameters))
+            {
+                Foods foods = null;
+                if (reader.Read())
+                {
+                    foods = new Foods();
+                    foods.FoodName = Convert.ToString(reader["FoodName"]);
+                    foods.FoodPrice = Convert.ToDecimal(reader["FoodPrice"]);
+                    foods.FoodNum = Convert.ToInt32(reader["FoodNum"]);
+
+                }
+                return foods;
+            }
+        }
         //添加商品
         public int Add(Foods foods)
         {
@@ -59,7 +76,7 @@ namespace BillibradDAL
         //更改库存
         public int UpdateFood(Foods foods)
         {
-            string sql = "update Food set FoodNum=@FoodNum where FoodName=@FoodName";
+            string sql = "update Foods set FoodNum=@FoodNum where FoodName=@FoodName";
             SqlParameter[] parameters = new SqlParameter[]
             {
                 new SqlParameter("@FoodName",foods.FoodName),
@@ -68,22 +85,11 @@ namespace BillibradDAL
             };
             return SqlHelper.ExecuteNonQuery(sql, parameters);
         }
-        //查询并生成房间
-        private Foods GetFoodsBySql(string sql, SqlParameter[] parameters)
+        //删除商品
+        public int DeleteFoodByFoodName(string foodName)
         {
-            using (SqlDataReader reader = SqlHelper.GetDataReader(sql, parameters))
-            {
-                Foods foods = null;
-                if(reader.Read())
-                {
-                    foods = new Foods();
-                    foods.FoodName = Convert.ToString(reader["FoodName"]);
-                    foods.FoodPrice = Convert.ToDecimal(reader["FoodPrice"]);
-                    foods.FoodNum = Convert.ToInt32(reader["FoodNum"]);
-
-                }
-                return foods;
-            }
+            string sql = "delete from Foods where FoodName='" + foodName + "'";
+            return SqlHelper.ExecuteNonQuery(sql, null);
         }
     }
 }

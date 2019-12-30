@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodForm));
             this.dgvFood = new System.Windows.Forms.DataGridView();
             this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,11 +37,6 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.售卖ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.售卖商品ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
-            this.添加库存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbAdd = new System.Windows.Forms.ToolStripButton();
@@ -50,27 +44,26 @@
             this.tsbSell = new System.Windows.Forms.ToolStripButton();
             this.tsbDelete = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtFoodName = new System.Windows.Forms.TextBox();
-            this.txtFoodPrice = new System.Windows.Forms.TextBox();
-            this.txtFoodNum = new System.Windows.Forms.TextBox();
-            this.txtSellNum = new System.Windows.Forms.TextBox();
-            this.txtSellPrice = new System.Windows.Forms.TextBox();
             this.lbloperateSteate = new System.Windows.Forms.Label();
+            this.txtSellPrice = new System.Windows.Forms.TextBox();
+            this.txtSellNum = new System.Windows.Forms.TextBox();
+            this.txtFoodNum = new System.Windows.Forms.TextBox();
+            this.txtFoodPrice = new System.Windows.Forms.TextBox();
+            this.txtFoodName = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvFood
             // 
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvFood.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -125,6 +118,7 @@
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "返回";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // toolStripComboBox1
             // 
@@ -138,40 +132,6 @@
             this.售卖ToolStripMenuItem.Name = "售卖ToolStripMenuItem";
             this.售卖ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.售卖ToolStripMenuItem.Text = "售卖";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.售卖商品ToolStripMenuItem,
-            this.添加库存ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 48);
-            // 
-            // 售卖商品ToolStripMenuItem
-            // 
-            this.售卖商品ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox1});
-            this.售卖商品ToolStripMenuItem.Name = "售卖商品ToolStripMenuItem";
-            this.售卖商品ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.售卖商品ToolStripMenuItem.Text = "售卖商品";
-            // 
-            // toolStripTextBox1
-            // 
-            this.toolStripTextBox1.Name = "toolStripTextBox1";
-            this.toolStripTextBox1.Size = new System.Drawing.Size(100, 23);
-            // 
-            // 添加库存ToolStripMenuItem
-            // 
-            this.添加库存ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTextBox2});
-            this.添加库存ToolStripMenuItem.Name = "添加库存ToolStripMenuItem";
-            this.添加库存ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.添加库存ToolStripMenuItem.Text = "添加库存";
-            // 
-            // toolStripTextBox2
-            // 
-            this.toolStripTextBox2.Name = "toolStripTextBox2";
-            this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
             // 
             // btnOk
             // 
@@ -216,6 +176,7 @@
             this.tsbModify.Size = new System.Drawing.Size(58, 37);
             this.tsbModify.Text = "管理库存";
             this.tsbModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbModify.Click += new System.EventHandler(this.tsbModify_Click);
             // 
             // tsbSell
             // 
@@ -225,6 +186,7 @@
             this.tsbSell.Size = new System.Drawing.Size(58, 37);
             this.tsbSell.Text = "售卖商品";
             this.tsbSell.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbSell.Click += new System.EventHandler(this.tsbSell_Click);
             // 
             // tsbDelete
             // 
@@ -234,6 +196,7 @@
             this.tsbDelete.Size = new System.Drawing.Size(58, 37);
             this.tsbDelete.Text = "删除商品";
             this.tsbDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbDelete.Click += new System.EventHandler(this.tsbDelete_Click);
             // 
             // groupBox1
             // 
@@ -255,41 +218,50 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "商品信息";
             // 
-            // label1
+            // lbloperateSteate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "商品名称：";
+            this.lbloperateSteate.AutoSize = true;
+            this.lbloperateSteate.ForeColor = System.Drawing.Color.Red;
+            this.lbloperateSteate.Location = new System.Drawing.Point(90, 211);
+            this.lbloperateSteate.Name = "lbloperateSteate";
+            this.lbloperateSteate.Size = new System.Drawing.Size(0, 12);
+            this.lbloperateSteate.TabIndex = 10;
             // 
-            // label2
+            // txtSellPrice
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 118);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "商品库存：";
+            this.txtSellPrice.Location = new System.Drawing.Point(103, 183);
+            this.txtSellPrice.Name = "txtSellPrice";
+            this.txtSellPrice.Size = new System.Drawing.Size(100, 21);
+            this.txtSellPrice.TabIndex = 9;
             // 
-            // label3
+            // txtSellNum
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 84);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 12);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "商品价格：";
+            this.txtSellNum.Location = new System.Drawing.Point(103, 149);
+            this.txtSellNum.Name = "txtSellNum";
+            this.txtSellNum.Size = new System.Drawing.Size(100, 21);
+            this.txtSellNum.TabIndex = 8;
+            this.txtSellNum.TextChanged += new System.EventHandler(this.txtSellNum_TextChanged);
             // 
-            // label4
+            // txtFoodNum
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 12);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "售卖数量：";
+            this.txtFoodNum.Location = new System.Drawing.Point(103, 115);
+            this.txtFoodNum.Name = "txtFoodNum";
+            this.txtFoodNum.Size = new System.Drawing.Size(100, 21);
+            this.txtFoodNum.TabIndex = 7;
+            // 
+            // txtFoodPrice
+            // 
+            this.txtFoodPrice.Location = new System.Drawing.Point(103, 81);
+            this.txtFoodPrice.Name = "txtFoodPrice";
+            this.txtFoodPrice.Size = new System.Drawing.Size(100, 21);
+            this.txtFoodPrice.TabIndex = 6;
+            // 
+            // txtFoodName
+            // 
+            this.txtFoodName.Location = new System.Drawing.Point(103, 47);
+            this.txtFoodName.Name = "txtFoodName";
+            this.txtFoodName.Size = new System.Drawing.Size(100, 21);
+            this.txtFoodName.TabIndex = 5;
             // 
             // label5
             // 
@@ -300,50 +272,41 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "售卖价格：";
             // 
-            // txtFoodName
+            // label4
             // 
-            this.txtFoodName.Location = new System.Drawing.Point(103, 47);
-            this.txtFoodName.Name = "txtFoodName";
-            this.txtFoodName.Size = new System.Drawing.Size(100, 21);
-            this.txtFoodName.TabIndex = 5;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(32, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "售卖数量：";
             // 
-            // txtFoodPrice
+            // label3
             // 
-            this.txtFoodPrice.Location = new System.Drawing.Point(103, 81);
-            this.txtFoodPrice.Name = "txtFoodPrice";
-            this.txtFoodPrice.Size = new System.Drawing.Size(100, 21);
-            this.txtFoodPrice.TabIndex = 6;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "商品价格：";
             // 
-            // txtFoodNum
+            // label2
             // 
-            this.txtFoodNum.Location = new System.Drawing.Point(103, 115);
-            this.txtFoodNum.Name = "txtFoodNum";
-            this.txtFoodNum.Size = new System.Drawing.Size(100, 21);
-            this.txtFoodNum.TabIndex = 7;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 118);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 12);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "商品库存：";
             // 
-            // txtSellNum
+            // label1
             // 
-            this.txtSellNum.Location = new System.Drawing.Point(103, 149);
-            this.txtSellNum.Name = "txtSellNum";
-            this.txtSellNum.Size = new System.Drawing.Size(100, 21);
-            this.txtSellNum.TabIndex = 8;
-            // 
-            // txtSellPrice
-            // 
-            this.txtSellPrice.Location = new System.Drawing.Point(103, 183);
-            this.txtSellPrice.Name = "txtSellPrice";
-            this.txtSellPrice.Size = new System.Drawing.Size(100, 21);
-            this.txtSellPrice.TabIndex = 9;
-            // 
-            // lbloperateSteate
-            // 
-            this.lbloperateSteate.AutoSize = true;
-            this.lbloperateSteate.ForeColor = System.Drawing.Color.Red;
-            this.lbloperateSteate.Location = new System.Drawing.Point(90, 211);
-            this.lbloperateSteate.Name = "lbloperateSteate";
-            this.lbloperateSteate.Size = new System.Drawing.Size(41, 12);
-            this.lbloperateSteate.TabIndex = 10;
-            this.lbloperateSteate.Text = "label6";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "商品名称：";
             // 
             // FoodForm
             // 
@@ -363,7 +326,6 @@
             this.Text = "商品售卖";
             this.Load += new System.EventHandler(this.FoodForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -379,11 +341,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripMenuItem 售卖ToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 售卖商品ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
-        private System.Windows.Forms.ToolStripMenuItem 添加库存ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripTextBox toolStripTextBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodName;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodNum;

@@ -26,7 +26,7 @@ namespace BillibradRoom
             dgvFood.DataSource = foodManager.GetAllFoods();
             Clear();
         }
-
+        //保证选定一整行
         private void dgvFood_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             
@@ -44,13 +44,19 @@ namespace BillibradRoom
                             dgvFood.ClearSelection();
                             dgvFood.Rows[e.RowIndex].Selected = true;
                         }
-                        contextMenuStrip1.Show(MousePosition.X, MousePosition.Y);
                     }
                 }          
         }
-
+        //清楚状态
         private void Clear()
         {
+            operateState = "";
+            lbloperateSteate.Text = "";
+            txtFoodName.Text = "";
+            txtFoodNum.Text = "";
+            txtFoodPrice.Text = "";
+            txtSellNum.Text = "";
+            txtSellPrice.Text = "";
             txtFoodName.ReadOnly = true;
             txtFoodNum.ReadOnly = true;
             txtFoodPrice.ReadOnly = true;
@@ -67,6 +73,36 @@ namespace BillibradRoom
             txtFoodPrice.ReadOnly = false;
             
         }
+        private void tsbModify_Click(object sender, EventArgs e)
+        {
+            operateState = "Modify";
+            lbloperateSteate.Text = "库存管理状态";
+            txtFoodNum.ReadOnly = false;
+            txtFoodName.Text = dgvFood.CurrentRow.Cells["FoodName"].Value.ToString();
+            txtFoodNum.Text = dgvFood.CurrentRow.Cells["FoodNum"].Value.ToString();
+            txtFoodPrice.Text = dgvFood.CurrentRow.Cells["FoodPrice"].Value.ToString();
+        }
+        private void tsbSell_Click(object sender, EventArgs e)
+        {
+            operateState = "Sell";
+            lbloperateSteate.Text = "售卖状态";
+            txtSellNum.ReadOnly = false;
+            txtFoodName.Text = dgvFood.CurrentRow.Cells["FoodName"].Value.ToString();
+            txtFoodNum.Text = dgvFood.CurrentRow.Cells["FoodNum"].Value.ToString();
+            txtFoodPrice.Text = dgvFood.CurrentRow.Cells["FoodPrice"].Value.ToString();
+        }
+        private void tsbDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("是否删除商品：" + txtFoodName.Text.Trim(), "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+            string foodName = Convert.ToString(dgvFood.CurrentRow.Cells["FoodName"].Value);
+            foodManager.DeleteFood(foodName);
+            Clear();
+            dgvFood.DataSource = foodManager.GetAllFoods();
+        }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
@@ -77,7 +113,7 @@ namespace BillibradRoom
             }
             Foods foods = new Foods();
             foods.FoodName = txtFoodName.Text.Trim();
-            foods.FoodNum = Convert.ToInt32( txtFoodNum.Text.Trim());
+            foods.FoodNum =int.Parse(txtFoodNum.Text.Trim())-int.Parse(txtSellNum.Text.Trim());
             foods.FoodPrice = Convert.ToDecimal(txtFoodPrice.Text.Trim());
             if (operateState == "Add")
             {
@@ -86,11 +122,50 @@ namespace BillibradRoom
                 {
                     MessageBox.Show("新增商品成功");
                     Clear();
-                }else if (count == -1)
+                }
+                else if (count == -1)
                 {
                     MessageBox.Show("已存在该商品");
                 }
             }
+            else if (operateState == "Modify")
+            {
+                foods.FoodName = Convert.ToString(dgvFood.CurrentRow.Cells["FoodName"].Value);
+                int count = foodManager.UpdateFood(foods);
+                if (count == 1)
+                {
+                    MessageBox.Show("库存管理成功");
+                    Clear();
+                }
+            }else if(operateState == "Sell")
+            {
+                foods.FoodName = Convert.ToString(dgvFood.CurrentRow.Cells["FoodName"].Value);
+                int count = foodManager.UpdateFood(foods);
+                if (count == 1)
+                {
+                    MessageBox.Show("商品售卖完成");
+                    Clear();
+                }
+            }
+            dgvFood.DataSource = foodManager.GetAllFoods();
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+        //计算商品总价格
+        private void txtSellNum_TextChanged(object sender, EventArgs e)
+        {
+            if (txtSellNum.Text == "")
+            {
+                txtSellPrice.Text = "";
+            }
+            else 
+            {
+                txtSellPrice.Text = Convert.ToString(decimal.Parse(txtFoodPrice.Text.Trim()) * decimal.Parse(txtSellNum.Text.Trim()));
+            }
+        }
+            
     }
 }

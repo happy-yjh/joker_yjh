@@ -26,5 +26,15 @@ namespace BillibradDLL
             }
             return foodService.Add(foods);
         }
+        //更改库存
+        public int UpdateFood(Foods foods)
+        {
+            return foodService.UpdateFood(foods);
+        }
+        //删除商品
+        public int DeleteFood(string foodName)
+        {
+            return foodService.DeleteFoodByFoodName(foodName);
+        }
     }
 }
