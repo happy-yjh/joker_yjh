@@ -22,6 +22,7 @@ namespace BillibradRoom
         private void FoodForm_Load(object sender, EventArgs e)
         {
             dgvFood.DataSource = FoodManager.GetFoods();
+            Clear();
         }
 
         private void dgvFood_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -44,6 +45,16 @@ namespace BillibradRoom
                         contextMenuStrip1.Show(MousePosition.X, MousePosition.Y);
                     }
                 }          
+        }
+
+        private void Clear()
+        {
+            txtFoodName.ReadOnly = true;
+            txtFoodNum.ReadOnly = true;
+            txtFoodPrice.ReadOnly = true;
+            txtSellNum.ReadOnly = true;
+            txtSellPrice.ReadOnly = true;
+            btnOk.Enabled = false;
         }
     }
 }
