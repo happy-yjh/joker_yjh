@@ -47,7 +47,7 @@ namespace BillibradRoom
                     }
                 }          
         }
-        //清楚状态
+        //清除状态方法
         private void Clear()
         {
             operateState = "";
@@ -63,7 +63,7 @@ namespace BillibradRoom
             txtSellNum.ReadOnly = true;
             txtSellPrice.ReadOnly = true;
         }
-
+        //添加商品
         private void tsbAdd_Click(object sender, EventArgs e)
         {
             operateState = "Add";
@@ -73,6 +73,7 @@ namespace BillibradRoom
             txtFoodPrice.ReadOnly = false;
             
         }
+        //修改库存
         private void tsbModify_Click(object sender, EventArgs e)
         {
             operateState = "Modify";
@@ -82,6 +83,7 @@ namespace BillibradRoom
             txtFoodNum.Text = dgvFood.CurrentRow.Cells["FoodNum"].Value.ToString();
             txtFoodPrice.Text = dgvFood.CurrentRow.Cells["FoodPrice"].Value.ToString();
         }
+        //售卖商品
         private void tsbSell_Click(object sender, EventArgs e)
         {
             operateState = "Sell";
@@ -91,9 +93,10 @@ namespace BillibradRoom
             txtFoodNum.Text = dgvFood.CurrentRow.Cells["FoodNum"].Value.ToString();
             txtFoodPrice.Text = dgvFood.CurrentRow.Cells["FoodPrice"].Value.ToString();
         }
+        //删除商品
         private void tsbDelete_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("是否删除商品：" + txtFoodName.Text.Trim(), "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("是否删除商品：" + dgvFood.CurrentRow.Cells["FoodName"].Value.ToString(), "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.No)
             {
                 return;
@@ -103,7 +106,7 @@ namespace BillibradRoom
             Clear();
             dgvFood.DataSource = foodManager.GetAllFoods();
         }
-
+        //判断状态并执行
         private void btnOk_Click(object sender, EventArgs e)
         {
             if (operateState == "")
@@ -149,7 +152,7 @@ namespace BillibradRoom
             }
             dgvFood.DataSource = foodManager.GetAllFoods();
         }
-
+        //清除状态
         private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
