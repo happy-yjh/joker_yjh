@@ -9,7 +9,7 @@ namespace BillibradModel
     public class Foods
     {
         public string FoodName { get; set; }//食物名称
-        public double FoodPrice { get; set; }//食物价格
+        public decimal FoodPrice { get; set; }//食物价格
         public int FoodNum { get; set; }//食物数量
     }
 }

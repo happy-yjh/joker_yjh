@@ -12,39 +12,26 @@ namespace BillibradDAL
     public class FoodService
     {
         //获取所有商品信息
-        public static List<Foods> GetFoods()
+        public List<Foods> GetFoods()
         {
-            DataSet ds = new DataSet();
             string sql = "select * from Foods";
-            List<Foods> foodsList = new List<Foods>();
-            using (SqlConnection conn = new SqlConnection(SqlHelper.ConnString))
+            return GetFoodsListBySql(sql, null);
+        }
+        //通过查询生成食品集合
+        private List<Foods> GetFoodsListBySql(string sql, SqlParameter[] parameters)
+        {
+            List<Foods> foodList = new List<Foods>();
+            using(SqlDataReader reader = SqlHelper.GetDataReader(sql, parameters))
             {
-                try
+                while (reader.Read())
                 {
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    conn.Open();
-                    SqlDataReader dataReader = cmd.ExecuteReader();
-                    while (dataReader.Read())
-                    {
-                        Foods foods = new Foods();
-                        foods.FoodName = Convert.ToString(dataReader["FoodName"]);
-                        foods.FoodNum = Convert.ToInt32(dataReader["FoodNum"]);
-                        foods.FoodPrice = Convert.ToDouble(dataReader["FoodPrice"]);
-                        foodsList.Add(foods);
-                    }
-                    dataReader.Close();
-                    return foodsList;
-                }catch(SqlException ex)
-                {
-                    throw ex;
-                }catch(Exception ex)
-                {
-                    throw ex;
+                    Foods foods = new Foods();
+                    foods.FoodName = Convert.ToString(reader["FoodName"]);
+                    foods.FoodPrice = Convert.ToDecimal(reader["FoodPrice"]);
+                    foods.FoodNum = Convert.ToInt32(reader["FoodNum"]);
+                    foodList.Add(foods);
                 }
-                finally
-                {
-                    conn.Close();
-                }
+                return foodList;
             }
         }
     }

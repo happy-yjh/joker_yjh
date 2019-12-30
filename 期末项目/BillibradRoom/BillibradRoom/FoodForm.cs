@@ -15,13 +15,14 @@ namespace BillibradRoom
 {
     public partial class FoodForm : Form
     {
+        FoodManager foodManager = new FoodManager();
         public FoodForm()
         {
             InitializeComponent();
         }
         private void FoodForm_Load(object sender, EventArgs e)
         {
-            dgvFood.DataSource = FoodManager.GetFoods();
+            dgvFood.DataSource = foodManager.GetAllFoods();
             Clear();
         }
 

@@ -11,18 +11,10 @@ namespace BillibradDLL
 {
     public class FoodManager
     {
-        public static List<Foods> GetFoods()
+        FoodService foodService = new FoodService();
+      public List<Foods> GetAllFoods()
         {
-            try
-            {
-                return FoodService.GetFoods();
-            }catch(SqlException ex)
-            {
-                throw ex;
-            }catch(Exception ex)
-            {
-                throw ex;
-            }
+            return foodService.GetFoods();
         }
     }
 }
