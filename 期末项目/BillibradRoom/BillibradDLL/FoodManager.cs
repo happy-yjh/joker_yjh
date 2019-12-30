@@ -12,9 +12,19 @@ namespace BillibradDLL
     public class FoodManager
     {
         FoodService foodService = new FoodService();
-      public List<Foods> GetAllFoods()
+        //获取全部商品
+        public List<Foods> GetAllFoods()
         {
             return foodService.GetFoods();
+        }
+        //添加商品
+        public int Add(Foods foods)
+        {
+            if (foodService.GetFoodByFoodName(foods.FoodName) != null)
+            {
+                return -1;
+            }
+            return foodService.Add(foods);
         }
     }
 }

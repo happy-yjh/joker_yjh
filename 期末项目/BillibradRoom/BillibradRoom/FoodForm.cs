@@ -16,6 +16,7 @@ namespace BillibradRoom
     public partial class FoodForm : Form
     {
         FoodManager foodManager = new FoodManager();
+        string operateState = "";//操作状态
         public FoodForm()
         {
             InitializeComponent();
@@ -55,7 +56,41 @@ namespace BillibradRoom
             txtFoodPrice.ReadOnly = true;
             txtSellNum.ReadOnly = true;
             txtSellPrice.ReadOnly = true;
-            btnOk.Enabled = false;
+        }
+
+        private void tsbAdd_Click(object sender, EventArgs e)
+        {
+            operateState = "Add";
+            lbloperateSteate.Text = "添加商品状态";
+            txtFoodName.ReadOnly = false;
+            txtFoodNum.ReadOnly = false;
+            txtFoodPrice.ReadOnly = false;
+            
+        }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+            if (operateState == "")
+            {
+                MessageBox.Show("请选择左侧操作状态");
+                return;
+            }
+            Foods foods = new Foods();
+            foods.FoodName = txtFoodName.Text.Trim();
+            foods.FoodNum = Convert.ToInt32( txtFoodNum.Text.Trim());
+            foods.FoodPrice = Convert.ToDecimal(txtFoodPrice.Text.Trim());
+            if (operateState == "Add")
+            {
+                int count = foodManager.Add(foods);
+                if (count == 1)
+                {
+                    MessageBox.Show("新增商品成功");
+                    Clear();
+                }else if (count == -1)
+                {
+                    MessageBox.Show("已存在该商品");
+                }
+            }
         }
     }
 }

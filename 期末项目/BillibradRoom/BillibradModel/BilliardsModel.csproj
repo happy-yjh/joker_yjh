@@ -43,7 +43,7 @@
     <Compile Include="Disk.cs" />
     <Compile Include="DiskState.cs" />
     <Compile Include="DiskType.cs" />
-    <Compile Include="Food.cs" />
+    <Compile Include="Foods.cs" />
     <Compile Include="GuestRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />

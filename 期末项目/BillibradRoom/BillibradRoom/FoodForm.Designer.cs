@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodForm));
             this.dgvFood = new System.Windows.Forms.DataGridView();
             this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +60,7 @@
             this.txtFoodNum = new System.Windows.Forms.TextBox();
             this.txtSellNum = new System.Windows.Forms.TextBox();
             this.txtSellPrice = new System.Windows.Forms.TextBox();
+            this.lbloperateSteate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -68,8 +69,8 @@
             // 
             // dgvFood
             // 
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvFood.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -181,6 +182,7 @@
             this.btnOk.TabIndex = 1;
             this.btnOk.Text = "确定";
             this.btnOk.UseVisualStyleBackColor = true;
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // toolStrip1
             // 
@@ -204,6 +206,7 @@
             this.tsbAdd.Size = new System.Drawing.Size(58, 37);
             this.tsbAdd.Text = "添加商品";
             this.tsbAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbAdd.Click += new System.EventHandler(this.tsbAdd_Click);
             // 
             // tsbModify
             // 
@@ -234,6 +237,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbloperateSteate);
             this.groupBox1.Controls.Add(this.txtSellPrice);
             this.groupBox1.Controls.Add(this.txtSellNum);
             this.groupBox1.Controls.Add(this.txtFoodNum);
@@ -331,6 +335,16 @@
             this.txtSellPrice.Size = new System.Drawing.Size(100, 21);
             this.txtSellPrice.TabIndex = 9;
             // 
+            // lbloperateSteate
+            // 
+            this.lbloperateSteate.AutoSize = true;
+            this.lbloperateSteate.ForeColor = System.Drawing.Color.Red;
+            this.lbloperateSteate.Location = new System.Drawing.Point(90, 211);
+            this.lbloperateSteate.Name = "lbloperateSteate";
+            this.lbloperateSteate.Size = new System.Drawing.Size(41, 12);
+            this.lbloperateSteate.TabIndex = 10;
+            this.lbloperateSteate.Text = "label6";
+            // 
             // FoodForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -390,5 +404,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbloperateSteate;
     }
 }
