@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FoodForm));
             this.dgvFood = new System.Windows.Forms.DataGridView();
             this.FoodName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FoodNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
             this.售卖ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -44,18 +43,33 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.添加库存ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox2 = new System.Windows.Forms.ToolStripTextBox();
+            this.btnOk = new System.Windows.Forms.Button();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsbAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsbModify = new System.Windows.Forms.ToolStripButton();
+            this.tsbSell = new System.Windows.Forms.ToolStripButton();
+            this.tsbDelete = new System.Windows.Forms.ToolStripButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtFoodName = new System.Windows.Forms.TextBox();
+            this.txtFoodPrice = new System.Windows.Forms.TextBox();
+            this.txtFoodNum = new System.Windows.Forms.TextBox();
+            this.txtSellNum = new System.Windows.Forms.TextBox();
+            this.txtSellPrice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvFood
             // 
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dgvFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dgvFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvFood.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -101,25 +115,15 @@
             this.FoodNum.ReadOnly = true;
             this.FoodNum.Width = 125;
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.Location = new System.Drawing.Point(101, 252);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(77, 36);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "售卖";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(236, 252);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(79, 36);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "返回";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(342, 353);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(79, 36);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "返回";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // toolStripComboBox1
             // 
@@ -168,53 +172,174 @@
             this.toolStripTextBox2.Name = "toolStripTextBox2";
             this.toolStripTextBox2.Size = new System.Drawing.Size(100, 23);
             // 
+            // btnOk
+            // 
+            this.btnOk.Location = new System.Drawing.Point(342, 204);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(2);
+            this.btnOk.Name = "btnOk";
+            this.btnOk.Size = new System.Drawing.Size(79, 36);
+            this.btnOk.TabIndex = 1;
+            this.btnOk.Text = "确定";
+            this.btnOk.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbAdd,
+            this.tsbModify,
+            this.tsbSell,
+            this.tsbDelete});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 160);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(61, 271);
+            this.toolStrip1.TabIndex = 3;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsbAdd
+            // 
+            this.tsbAdd.Image = ((System.Drawing.Image)(resources.GetObject("tsbAdd.Image")));
+            this.tsbAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAdd.Name = "tsbAdd";
+            this.tsbAdd.Size = new System.Drawing.Size(58, 37);
+            this.tsbAdd.Text = "添加商品";
+            this.tsbAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbModify
+            // 
+            this.tsbModify.Image = ((System.Drawing.Image)(resources.GetObject("tsbModify.Image")));
+            this.tsbModify.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbModify.Name = "tsbModify";
+            this.tsbModify.Size = new System.Drawing.Size(58, 37);
+            this.tsbModify.Text = "管理库存";
+            this.tsbModify.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbSell
+            // 
+            this.tsbSell.Image = ((System.Drawing.Image)(resources.GetObject("tsbSell.Image")));
+            this.tsbSell.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSell.Name = "tsbSell";
+            this.tsbSell.Size = new System.Drawing.Size(58, 37);
+            this.tsbSell.Text = "售卖商品";
+            this.tsbSell.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // tsbDelete
+            // 
+            this.tsbDelete.Image = ((System.Drawing.Image)(resources.GetObject("tsbDelete.Image")));
+            this.tsbDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDelete.Name = "tsbDelete";
+            this.tsbDelete.Size = new System.Drawing.Size(58, 37);
+            this.tsbDelete.Text = "删除商品";
+            this.tsbDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtSellPrice);
+            this.groupBox1.Controls.Add(this.txtSellNum);
+            this.groupBox1.Controls.Add(this.txtFoodNum);
+            this.groupBox1.Controls.Add(this.txtFoodPrice);
+            this.groupBox1.Controls.Add(this.txtFoodName);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(78, 166);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(246, 242);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "商品信息";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 177);
+            this.label1.Location = new System.Drawing.Point(32, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 0;
             this.label1.Text = "商品名称：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(76, 218);
+            this.label2.Location = new System.Drawing.Point(32, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "贩卖数量：";
+            this.label2.TabIndex = 1;
+            this.label2.Text = "商品库存：";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(274, 218);
+            this.label3.Location = new System.Drawing.Point(32, 84);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 12);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "总金额：";
+            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "商品价格：";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(274, 177);
+            this.label4.Location = new System.Drawing.Point(32, 152);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "桌号：";
+            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "售卖数量：";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(32, 186);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 12);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "售卖价格：";
+            // 
+            // txtFoodName
+            // 
+            this.txtFoodName.Location = new System.Drawing.Point(103, 47);
+            this.txtFoodName.Name = "txtFoodName";
+            this.txtFoodName.Size = new System.Drawing.Size(100, 21);
+            this.txtFoodName.TabIndex = 5;
+            // 
+            // txtFoodPrice
+            // 
+            this.txtFoodPrice.Location = new System.Drawing.Point(103, 81);
+            this.txtFoodPrice.Name = "txtFoodPrice";
+            this.txtFoodPrice.Size = new System.Drawing.Size(100, 21);
+            this.txtFoodPrice.TabIndex = 6;
+            // 
+            // txtFoodNum
+            // 
+            this.txtFoodNum.Location = new System.Drawing.Point(103, 115);
+            this.txtFoodNum.Name = "txtFoodNum";
+            this.txtFoodNum.Size = new System.Drawing.Size(100, 21);
+            this.txtFoodNum.TabIndex = 7;
+            // 
+            // txtSellNum
+            // 
+            this.txtSellNum.Location = new System.Drawing.Point(103, 149);
+            this.txtSellNum.Name = "txtSellNum";
+            this.txtSellNum.Size = new System.Drawing.Size(100, 21);
+            this.txtSellNum.TabIndex = 8;
+            // 
+            // txtSellPrice
+            // 
+            this.txtSellPrice.Location = new System.Drawing.Point(103, 183);
+            this.txtSellPrice.Name = "txtSellPrice";
+            this.txtSellPrice.Size = new System.Drawing.Size(100, 21);
+            this.txtSellPrice.TabIndex = 9;
             // 
             // FoodForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 306);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(432, 431);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvFood);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -225,6 +350,10 @@
             this.Load += new System.EventHandler(this.FoodForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -233,8 +362,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvFood;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripMenuItem 售卖ToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
@@ -245,9 +373,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodName;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn FoodNum;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnOk;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsbAdd;
+        private System.Windows.Forms.ToolStripButton tsbModify;
+        private System.Windows.Forms.ToolStripButton tsbSell;
+        private System.Windows.Forms.ToolStripButton tsbDelete;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtSellPrice;
+        private System.Windows.Forms.TextBox txtSellNum;
+        private System.Windows.Forms.TextBox txtFoodNum;
+        private System.Windows.Forms.TextBox txtFoodPrice;
+        private System.Windows.Forms.TextBox txtFoodName;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
