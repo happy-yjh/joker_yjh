@@ -36,7 +36,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 65);
+            this.label1.Location = new System.Drawing.Point(29, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 0;
@@ -44,20 +44,21 @@
             // 
             // cboDiskType
             // 
+            this.cboDiskType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDiskType.FormattingEnabled = true;
             this.cboDiskType.Items.AddRange(new object[] {
             "中式八球",
             "三球",
             "九球",
             "16彩球"});
-            this.cboDiskType.Location = new System.Drawing.Point(137, 62);
+            this.cboDiskType.Location = new System.Drawing.Point(100, 41);
             this.cboDiskType.Name = "cboDiskType";
-            this.cboDiskType.Size = new System.Drawing.Size(121, 20);
+            this.cboDiskType.Size = new System.Drawing.Size(100, 20);
             this.cboDiskType.TabIndex = 1;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(114, 207);
+            this.btnAdd.Location = new System.Drawing.Point(84, 98);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 266);
+            this.ClientSize = new System.Drawing.Size(236, 146);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cboDiskType);
             this.Controls.Add(this.label1);

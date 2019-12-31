@@ -23,5 +23,9 @@ namespace BillibradDLL
             //}
             return diskService.Add(disks);
         }
+        public int Delete(int diskId)
+        {
+            return diskService.Delete(diskId);
+        }
     }
 }

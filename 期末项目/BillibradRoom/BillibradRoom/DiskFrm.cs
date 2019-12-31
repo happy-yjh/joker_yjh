@@ -23,10 +23,28 @@ namespace BillibradRoom
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Disks disk = new Disks();
-            disk.DiskTypeID = 3;
-            disk.DiskStateID = 2;
-            disk.Description = "9球";
+                Disks disk = new Disks();
+                if (cboDiskType.Text == "中式八球")
+                {
+                    disk.DiskTypeID = 1;
+                    
+                    disk.Description = "中式八球";
+                }
+                else if(cboDiskType.Text=="三球"){
+                    disk.DiskTypeID = 2;
+                    disk.Description = "三球";
+                }
+                else if (cboDiskType.Text == "九球")
+                {
+                    disk.DiskTypeID = 3;
+                    disk.Description = "九球";
+                }
+                else if (cboDiskType.Text == "16彩球")
+                {
+                    disk.DiskTypeID = 4;
+                    disk.Description = "16彩球";
+                }
+                disk.DiskStateID = 2;
 
 
                 int count = diskManager.Add(disk);
@@ -39,7 +57,7 @@ namespace BillibradRoom
                 {
                     MessageBox.Show("添加失败");
                 }
-            
+                this.Close();
             
         }
     }

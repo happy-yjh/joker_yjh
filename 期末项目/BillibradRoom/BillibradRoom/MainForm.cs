@@ -76,8 +76,16 @@ namespace BillibradRoom
         private void lvDisks_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)
         {
             Disks disk = (Disks)e.Item.Tag;//获取鼠标悬停时的list view项(台球桌）
+            string State = "";
+            if (disk.DiskStateID == 1)
+            {
+                State = "营业";
+            }else if (disk.DiskStateID == 2)
+            {
+                State = "空闲";
+            }
             ToolTip toolTip = new ToolTip();//构建文本提示对象
-            string tip = string.Format("球桌状态：{0}\r\n球桌描述：{1}", disk.DiskStateID, disk.Description);
+            string tip = string.Format("球桌状态：{0}\r\n球桌描述：{1}", State, disk.Description);
             toolTip.SetToolTip((e.Item).ListView, tip);
         }
 
@@ -110,6 +118,67 @@ namespace BillibradRoom
         {
             DiskFrm diskFrm = new DiskFrm();
             diskFrm.ShowDialog();
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            if (lvDisks.SelectedItems.Count == 0)//没有点到球桌
+            {
+                MessageBox.Show("请选择要删除的球桌");
+                return;
+            }else if (lvDisks.SelectedItems.Count != 0)
+            {
+                //删除球桌
+
+                    DialogResult dialogResult = MessageBox.Show("是否删除球桌？" , "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogResult == DialogResult.No)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                         Disks disks= (Disks) lvDisks.SelectedItems[0].Tag;
+                        int diskID = disks.DiskID;
+                        diskManager.Delete(diskID);
+                        List<Disks> diskList = diskManager.GetDiskListByDisk();
+                        lvDisks.Items.Clear();//清空所有项
+                        foreach (Disks disk in diskList)
+                        {
+                            ListViewItem item = new ListViewItem();
+                            if (disk.DiskStateID == 1)
+                            {
+                                item.ImageIndex = 0;
+                            }
+                            else if (disk.DiskStateID == 2)
+                            {
+                                item.ImageIndex = 1;
+                            }
+                            item.Tag = disk;
+                            lvDisks.Items.Add(item);
+                        }
+                    }
+                
+            }
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            List<Disks> diskList = diskManager.GetDiskListByDisk();
+            lvDisks.Items.Clear();//清空所有项
+            foreach (Disks disk in diskList)
+            {
+                ListViewItem item = new ListViewItem();
+                if (disk.DiskStateID == 1)
+                {
+                    item.ImageIndex = 0;
+                }
+                else if (disk.DiskStateID == 2)
+                {
+                    item.ImageIndex = 1;
+                }
+                item.Tag = disk;
+                lvDisks.Items.Add(item);
+            }
         }
     }
 }

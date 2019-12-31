@@ -60,5 +60,10 @@ namespace BillibradDAL
             };
             return SqlHelper.ExecuteNonQuery(sql, parameters);
         }
+        public int Delete(int diskID)
+        {
+            string sql = "delete from Disks where DiskID=" + diskID;
+            return SqlHelper.ExecuteNonQuery(sql, null);
+        }
     }
 }
