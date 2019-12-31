@@ -116,7 +116,7 @@ namespace BillibradRoom
             }
             Foods foods = new Foods();
             foods.FoodName = txtFoodName.Text.Trim();
-            foods.FoodNum =int.Parse(txtFoodNum.Text.Trim())-int.Parse(txtSellNum.Text.Trim());
+            foods.FoodNum = Convert.ToInt32( txtFoodNum.Text.Trim());           
             foods.FoodPrice = Convert.ToDecimal(txtFoodPrice.Text.Trim());
             if (operateState == "Add")
             {
@@ -142,6 +142,7 @@ namespace BillibradRoom
                 }
             }else if(operateState == "Sell")
             {
+                foods.FoodNum = int.Parse(txtFoodNum.Text.Trim()) - int.Parse(txtSellNum.Text.Trim());
                 foods.FoodName = Convert.ToString(dgvFood.CurrentRow.Cells["FoodName"].Value);
                 int count = foodManager.UpdateFood(foods);
                 if (count == 1)
