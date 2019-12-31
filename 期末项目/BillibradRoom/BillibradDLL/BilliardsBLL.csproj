@@ -43,6 +43,7 @@
     <Compile Include="DiskManager.cs" />
     <Compile Include="FoodManager.cs" />
     <Compile Include="LoginManager.cs" />
+    <Compile Include="MemberManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

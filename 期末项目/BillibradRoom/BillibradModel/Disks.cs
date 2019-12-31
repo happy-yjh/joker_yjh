@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BillibradModel
 {
-    public class Disk
+    public class Disks
     {
         public int DiskID { get; set; }//球桌Id
         public string Description { get; set; }//描述

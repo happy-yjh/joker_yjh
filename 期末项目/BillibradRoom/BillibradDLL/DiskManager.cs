@@ -11,7 +11,7 @@ namespace BillibradDLL
     public class DiskManager
     {
         DiskService diskService = new DiskService();
-        public List<Disk>GetDiskListByDisk()
+        public List<Disks> GetDiskListByDisk()
         {
             return diskService.GetDIskListDisk();
         }

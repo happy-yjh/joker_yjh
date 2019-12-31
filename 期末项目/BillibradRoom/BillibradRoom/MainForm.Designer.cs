@@ -35,12 +35,16 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.imageListDisk = new System.Windows.Forms.ImageList(this.components);
             this.lvDisks = new System.Windows.Forms.ListView();
             this.panelDisk = new System.Windows.Forms.Panel();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.添加球桌ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除球桌ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.panelDisk.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -78,6 +82,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(60, 62);
             this.toolStripButton2.Text = "会员管理";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -99,6 +104,15 @@
             this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(60, 62);
+            this.toolStripButton5.Text = "添加球桌";
+            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // imageListDisk
             // 
             this.imageListDisk.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListDisk.ImageStream")));
@@ -113,7 +127,7 @@
             this.lvDisks.HideSelection = false;
             this.lvDisks.LargeImageList = this.imageListDisk;
             this.lvDisks.Location = new System.Drawing.Point(0, 0);
-            this.lvDisks.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvDisks.Margin = new System.Windows.Forms.Padding(2);
             this.lvDisks.Name = "lvDisks";
             this.lvDisks.Size = new System.Drawing.Size(735, 454);
             this.lvDisks.TabIndex = 10;
@@ -131,14 +145,25 @@
             this.panelDisk.Size = new System.Drawing.Size(739, 458);
             this.panelDisk.TabIndex = 0;
             // 
-            // toolStripButton5
+            // contextMenuStrip1
             // 
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(60, 62);
-            this.toolStripButton5.Text = "添加球桌";
-            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.添加球桌ToolStripMenuItem,
+            this.删除球桌ToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 48);
+            // 
+            // 添加球桌ToolStripMenuItem
+            // 
+            this.添加球桌ToolStripMenuItem.Name = "添加球桌ToolStripMenuItem";
+            this.添加球桌ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.添加球桌ToolStripMenuItem.Text = "添加球桌";
+            // 
+            // 删除球桌ToolStripMenuItem
+            // 
+            this.删除球桌ToolStripMenuItem.Name = "删除球桌ToolStripMenuItem";
+            this.删除球桌ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.删除球桌ToolStripMenuItem.Text = "删除球桌";
             // 
             // MainForm
             // 
@@ -155,6 +180,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panelDisk.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -169,5 +195,8 @@
         private System.Windows.Forms.ListView lvDisks;
         private System.Windows.Forms.Panel panelDisk;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 添加球桌ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 删除球桌ToolStripMenuItem;
     }
 }

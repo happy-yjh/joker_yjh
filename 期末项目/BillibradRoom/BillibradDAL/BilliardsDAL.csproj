@@ -43,6 +43,7 @@
     <Compile Include="DiskService.cs" />
     <Compile Include="FoodService.cs" />
     <Compile Include="LoginService.cs" />
+    <Compile Include="MemberService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlHelper.cs" />
   </ItemGroup>

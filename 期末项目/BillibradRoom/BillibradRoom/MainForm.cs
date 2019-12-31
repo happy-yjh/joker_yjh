@@ -56,9 +56,9 @@ namespace BillibradRoom
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            List<Disk> diskList = diskManager.GetDiskListByDisk();
+            List<Disks> diskList = diskManager.GetDiskListByDisk();
             lvDisks.Items.Clear();//清空所有项
-            foreach(Disk disk in diskList)
+            foreach(Disks disk in diskList)
             {
                 ListViewItem item = new ListViewItem();
                 if (disk.DiskStateID == 1)
@@ -75,7 +75,7 @@ namespace BillibradRoom
 
         private void lvDisks_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)
         {
-            Disk disk = (Disk)e.Item.Tag;//获取鼠标悬停时的list view项(台球桌）
+            Disks disk = (Disks)e.Item.Tag;//获取鼠标悬停时的list view项(台球桌）
             ToolTip toolTip = new ToolTip();//构建文本提示对象
             string tip = string.Format("球桌状态：{0}\r\n球桌描述：{1}", disk.DiskStateID, disk.Description);
             toolTip.SetToolTip((e.Item).ListView, tip);
@@ -88,7 +88,7 @@ namespace BillibradRoom
                 return;
             }
             ListViewItem item = lvDisks.SelectedItems[0];
-            Disk disk = (Disk)item.Tag;
+            Disks disk = (Disks)item.Tag;
             if (disk.DiskStateID != 2)
             {
                 MessageBox.Show("该球桌已开台");
@@ -98,6 +98,12 @@ namespace BillibradRoom
             {
                 diskForm.ShowDialog();
             }
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            MemberForm memberForm = new MemberForm();
+            memberForm.ShowDialog();
         }
     }
 }
