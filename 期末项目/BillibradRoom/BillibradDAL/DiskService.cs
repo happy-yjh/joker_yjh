@@ -24,5 +24,41 @@ namespace BillibradDAL
             reader.Close();
             return diskList;
         }
+        //public Disks GetFoodByDiskID(int diskID)
+        //{
+        //    string sql = "select * from Disks where DiskID=@DiskID";
+        //    SqlParameter[] param = new SqlParameter[]
+        //    {
+        //        new SqlParameter("@FoodName",diskID)
+        //    };
+        //    return GetDisksBySql(sql, param); ;
+        //}
+        private Disks GetDisksBySql(string sql, SqlParameter[] parameters)
+        {
+            using (SqlDataReader reader = SqlHelper.GetDataReader(sql, parameters))
+            {
+                Disks disks = null;
+                if (reader.Read())
+                {
+                    disks = new Disks();
+                    disks.DiskID = Convert.ToInt32(reader["DiskID"]);
+                    disks.DiskStateID = Convert.ToInt32(reader["DiskStateID"]);
+                    disks.DiskTypeID = Convert.ToInt32(reader["DiskTypeID"]);
+
+                }
+                return disks;
+            }
+        }
+        public int Add(Disks disks)
+        {
+            string sql = "insert into Disks(Description,DiskStateID,DiskTypeID) values (@Description,@DiskStateID,@DiskTypeID)";
+            SqlParameter[] parameters = new SqlParameter[]
+            {
+                new SqlParameter("@Description",disks.Description),
+                new SqlParameter("@DiskStateID",disks.DiskStateID),
+                new SqlParameter("@DiskTypeID",disks.DiskTypeID)
+            };
+            return SqlHelper.ExecuteNonQuery(sql, parameters);
+        }
     }
 }

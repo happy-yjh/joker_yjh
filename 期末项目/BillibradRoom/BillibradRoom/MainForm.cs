@@ -15,7 +15,7 @@ namespace BillibradRoom
     public partial class MainForm : Form
     {
         DiskManager diskManager = new DiskManager();
-        DiskForm diskForm = new DiskForm();
+        DiskPayForm diskForm = new DiskPayForm();
         public MainForm()
         {
             InitializeComponent();
@@ -104,6 +104,12 @@ namespace BillibradRoom
         {
             MemberForm memberForm = new MemberForm();
             memberForm.ShowDialog();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            DiskFrm diskFrm = new DiskFrm();
+            diskFrm.ShowDialog();
         }
     }
 }

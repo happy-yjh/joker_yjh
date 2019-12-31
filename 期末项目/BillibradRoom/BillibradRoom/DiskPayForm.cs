@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BillibradRoom
 {
-    public partial class DiskForm : Form
+    public partial class DiskPayForm : Form
     {
-        public DiskForm()
+        public DiskPayForm()
         {
             InitializeComponent();
         }

@@ -15,5 +15,13 @@ namespace BillibradDLL
         {
             return diskService.GetDIskListDisk();
         }
+        public int Add(Disks disks)
+        {
+            //if (diskService.GetFoodByDiskID(disks.DiskID) != null)
+            //{
+            //    return -1;
+            //}
+            return diskService.Add(disks);
+        }
     }
 }

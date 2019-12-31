@@ -46,11 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiskForm.cs">
+    <Compile Include="DiskFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DiskForm.Designer.cs">
-      <DependentUpon>DiskForm.cs</DependentUpon>
+    <Compile Include="DiskFrm.Designer.cs">
+      <DependentUpon>DiskFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiskPayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiskPayForm.Designer.cs">
+      <DependentUpon>DiskPayForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FoodForm.cs">
       <SubType>Form</SubType>
@@ -78,8 +84,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="DiskForm.resx">
-      <DependentUpon>DiskForm.cs</DependentUpon>
+    <EmbeddedResource Include="DiskFrm.resx">
+      <DependentUpon>DiskFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiskPayForm.resx">
+      <DependentUpon>DiskPayForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FoodForm.resx">
       <DependentUpon>FoodForm.cs</DependentUpon>
